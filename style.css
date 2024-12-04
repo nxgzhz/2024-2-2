@@ -1,0 +1,352 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font Import */
+@font-face {
+  font-family: "ClimateCrisis1979";
+  src: url("fonts/ClimateCrisisKR-1979.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ClimateCrisis1990";
+  src: url("fonts/ClimateCrisisKR-1990.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ClimateCrisis2000";
+  src: url("fonts/ClimateCrisisKR-2000.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ClimateCrisis2010";
+  src: url("fonts/ClimateCrisisKR-2010.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ClimateCrisis2019";
+  src: url("fonts/ClimateCrisisKR-2019.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ClimateCrisis2030";
+  src: url("fonts/ClimateCrisisKR-2030.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ClimateCrisis2040";
+  src: url("fonts/ClimateCrisisKR-2040.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ClimateCrisis2050";
+  src: url("fonts/ClimateCrisisKR-2050.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Freesentation-6";
+  src: url("fonts/Freesentation-6SemiBold.ttf") format("truetype");
+}
+
+/* Body and Background */
+body {
+  background-color: #0548ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* White Boxes */
+.white-box {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+}
+
+.text-date {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-family: "Freesentation-6", sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+/* Text Styling */
+.text-title {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-family: "ClimateCrisis1979", sans-serif;
+  font-size: 70px;
+  color: white;
+}
+
+.text-subtitle {
+  position: absolute;
+  top: 20%;
+  right: 35%;
+  font-family: "ClimateCrisis2010", sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+.text-date2 {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  font-family: "Freesentation-6", sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+.text-location {
+  position: absolute;
+  top: 28%;
+  right: 5%;
+  font-family: "Freesentation-6", sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+.text-rotated {
+  position: absolute;
+  bottom: 10%;
+  right: -10%;
+  font-family: "ClimateCrisis2010", sans-serif;
+  font-size: 20px;
+  color: white;
+  transform: rotate(90deg);
+}
+
+.text-open {
+  position: absolute;
+  bottom: 8%;
+  right: -3%;
+  font-family: "Freesentation-6", sans-serif;
+  font-size: 20px;
+  color: white;
+  transform: rotate(90deg);
+}
+
+.rectangle {
+  position: absolute;
+  background-color: #eb4dd8;
+}
+
+#clock01 {
+  width: 500px;
+  height: 20px;
+  left: 50%;
+  top: 60%;
+  transform: rotate(-25deg);
+  z-index: 100;
+}
+
+#clock02 {
+  width: 240px;
+  height: 20px;
+  left: 42%;
+  top: 55%;
+  transform: rotate(25deg);
+  z-index: 100;
+}
+
+/* White Boxes */
+.white-box {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+}
+/* 움직이는 박스 오른쪽 이동 */
+@keyframes move-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 움직이는 박스 왼쪽 이동 */
+@keyframes move-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* White Box 기본 스타일 */
+.white-box {
+  position: absolute;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Box 1~7 and 12: 오른쪽으로 이동 */
+img[alt="Box 1"],
+img[alt="Box 2"],
+img[alt="Box 3"],
+img[alt="Box 4"],
+img[alt="Box 5"],
+img[alt="Box 6"],
+img[alt="Box 7"],
+img[alt="Box 12"] {
+  animation-name: move-right;
+}
+
+/* Box 8~11: 왼쪽으로 이동 */
+img[alt="Box 8"],
+img[alt="Box 9"],
+img[alt="Box 10"],
+img[alt="Box 11"] {
+  animation-name: move-left;
+}
+
+/* 각 박스 속도 설정 */
+img[alt="Box 1"] {
+  animation-duration: 7s; /* 느리게 */
+}
+
+img[alt="Box 2"] {
+  animation-duration: 6.8s;
+}
+
+img[alt="Box 3"] {
+  animation-duration: 7.2s;
+}
+
+img[alt="Box 4"] {
+  animation-duration: 7.5s;
+}
+
+img[alt="Box 5"] {
+  animation-duration: 8s;
+}
+
+img[alt="Box 6"] {
+  animation-duration: 7.7s;
+}
+
+img[alt="Box 7"] {
+  animation-duration: 7.3s;
+}
+
+img[alt="Box 8"] {
+  animation-duration: 8.2s; /* 느리게 */
+}
+
+img[alt="Box 9"] {
+  animation-duration: 7.8s;
+}
+
+img[alt="Box 10"] {
+  animation-duration: 7.4s;
+}
+
+img[alt="Box 11"] {
+  animation-duration: 7.6s;
+}
+
+img[alt="Box 12"] {
+  animation-duration: 7.5s;
+}
+
+/* 자연스러운 폰트 전환 및 2050 이후 투명화 */
+@keyframes fadeAndThinSmooth {
+  0% {
+    font-family: "ClimateCrisis1979", sans-serif;
+    opacity: 1;
+  }
+  17% {
+    font-family: "ClimateCrisis1990", sans-serif;
+    opacity: 1; /* 투명도 변화 없음 */
+  }
+  34% {
+    font-family: "ClimateCrisis2010", sans-serif;
+    opacity: 1;
+  }
+  51% {
+    font-family: "ClimateCrisis2019", sans-serif;
+    opacity: 1;
+  }
+  68% {
+    font-family: "ClimateCrisis2030", sans-serif;
+    opacity: 1;
+  }
+  85% {
+    font-family: "ClimateCrisis2040", sans-serif;
+    opacity: 1;
+  }
+  95% {
+    font-family: "ClimateCrisis2050", sans-serif;
+    opacity: 1; /* 투명도는 여기서부터 변화 시작 */
+  }
+  100% {
+    font-family: "ClimateCrisis2050", sans-serif;
+    opacity: 0; /* 완전히 사라짐 */
+  }
+}
+
+/* 애니메이션 적용 */
+.text-title,
+.text-subtitle,
+.text-rotated {
+  animation: fadeAndThinSmooth 12s ease-out forwards; /* 한 번만 실행 */
+  will-change: opacity, font-family; /* 성능 최적화 */
+  transition: font-family 0.5s ease-in-out; /* 부드러운 폰트 변경 */
+}
+
+/* 시계바늘 애니메이션 */
+@keyframes rotate-counterclockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 시계바늘 애니메이션 적용 */
+#clock01 {
+  animation: rotate-counterclockwise 100s linear infinite;
+  transform-origin: center; /* 회전 중심 설정 */
+  z-index: 90; /* 텍스트 뒤로 */
+}
+
+#clock02 {
+  animation: rotate-clockwise 10s linear infinite;
+  transform-origin: center; /* 회전 중심 설정 */
+  z-index: 90; /* 텍스트 뒤로 */
+}
+
+/* 텍스트 스타일 복원 및 z-index 유지 */
+.text-title,
+.text-subtitle,
+.text-rotated,
+.text-date,
+.text-date2,
+.text-location,
+.text-open {
+  position: absolute; /* 기존 위치 설정 유지 */
+  z-index: 100; /* 시계바늘 위로 */
+}
